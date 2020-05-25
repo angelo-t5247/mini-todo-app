@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Todo App | Welcome Page</title>
+</head>
+<body>
+	<h1>Welcome To Todo App</h1>
+	<hr>
+	<a th:href="@{/homepage/{username}(username=${user.username})}">Show Todo List</a>
+	<a th:href="@{/logout}">Logout</a>
+</body>
+</html>

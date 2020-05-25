@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Mini Todo App | Update Todo</title>
+<link rel="stylesheet" 
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Todo</h1>
+		<hr>
+		<h2>Update Todo</h2>
+		
+		<form th:action="@{/save-todo/{username}(username=${todo.username})}" th:object="${todo}" method="POST">
+			<!-- Hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}">
+			<input type="text" th:field = "*{name}" placeholder="Enter Todo" class="form-control mb-4 col-4">
+			<input type="text" th:field = "*{description}" placeholder="Enter description" class="form-control mb-4 col-4">
+			<button type="submit" class="btn btn-info col-2">Update Todo</button>
+		</form>
+	</div>
+</body>
+</html>
